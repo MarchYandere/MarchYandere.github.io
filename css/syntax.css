@@ -1,1 +1,7 @@
-.promo{ background:url(../images/bg.jpg) repeat-x center top #333 }
+.promo{ background:url(../images/bg.jpg) repeat-x center top #333; margin:0px; }
+
+.top-person-bg{ width:100%; height:400px;}
+
+.person-info{ background:#FFF; width:100%; height:300px;}
+
+.person-artice{ background:#f9f9f9; width:100%; height:600px;}
