@@ -23,7 +23,7 @@ categories:
     LaunchImage-800-667h@2x.png (iPhone 6)  
     LaunchImage-800-Portrait-736h@3x.png (iPhone 6 Plus Portrait)  
 在app内，系统会生成如上所示图片，根据需求获取图片：
-```object-c
+```
     _imageview = [[UIImageView alloc] initWithFrame:self.view.bounds];
     
     GBDeviceDetails *detail = [GBDeviceInfoIOS deviceDetails];
