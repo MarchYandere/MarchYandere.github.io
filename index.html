@@ -2,4 +2,36 @@
 layout: default
 title: Home
 ---
-<h1>hello<h1>
+<section class="post" id="section:articles">
+
+    <h3 class="heading">博文</h3>
+
+       <ul class="list-ui  post__list  mb">
+            {% for post in paginator.posts %}
+            <li class="list-ui__item">
+                 <time class="post__date" datetime="{{ post.date | date: "%Y-%m-%d" }}">{{ post.date | date: "%d %B, %Y" }}</time>
+                 <h3 class="post__title"><a href="{{ post.url }}">{{ post.title }}</a></h3>
+            </li>
+            {% endfor %}
+       </ul>
+
+</section>
+
+<ol class="layout" data-ui-component="Pagination">
+
+	<li class="layout__item  lap-and-up-one-half  mb">
+		{% if paginator.next_page %}
+			<a href="/page{{paginator.next_page}}#section:articles" class="btn  btn--full  btn--secondary">Older articles</a>
+		{% endif %}
+            
+		{% if paginator.previous_page %}
+			<li class="layout__item  lap-and-up-one-half  mb">
+				{% if paginator.previous_page == 1 %}
+					<a href="/#section:articles" class="btn  btn--full">Newer articles</a>
+				{% else %}
+                    <a href="/page{{paginator.previous_page}}#section:articles" class="btn  btn--full">Newer articles</a>
+				{% endif %}
+ 			</li>
+		{% endif %}
+	</li>
+</ol>

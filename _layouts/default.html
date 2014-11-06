@@ -145,33 +145,9 @@
 
 <div class="layout  layout--large">
     <div class="layout__item  lap-and-up-one-half  desk-two-thirds" data-ui-component="Main content">
-
-        <section class="post" id="section:articles">
-
-            <h3 class="heading">博文</h3>
-
-            <ul class="list-ui  post__list  mb">
-                
-                <li class="list-ui__item">
-                    <time class="post__date" datetime="2014-10-29">29 October, 2014</time>
-                    <h3 class="post__title"><a href="/2014/10/the-specificity-graph">The Specificity Graph</a></h3>
-                </li>
-                
-                
-                
-            </ul>
-
-        </section>
-
-        <ol class="layout" data-ui-component="Pagination">
-
-            <li class="layout__item  lap-and-up-one-half  mb">
-                
-                    <a href="/page2#section:articles" class="btn  btn--full  btn--secondary">下一页</a>
-             </li>
-                
-        </ol>
-
+        
+        {{ content }}
+		
     </div
     
     ><div class="layout__item  lap-and-up-one-half  desk-one-third" data-ui-component="Sub content">
@@ -235,9 +211,7 @@
 
 </section>-->
 
-{{ content }}
-
-<footer class="page-micro">
+<footer class="page-micro" style="margin-bottom:0px;">
 
     <p class="wrapper">
         <small class="page-micro__copy"><b>MarchYandere</b> is my <b>nickname.</b>  <b>contact me.</b> <b>QQ:</b>376490931</small>
