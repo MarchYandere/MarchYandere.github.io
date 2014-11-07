@@ -8,9 +8,9 @@
 			<h4>分类</h4>
 
 			<ul class="[ list-ui  list-ui--small ]  mb">
-    			<li><a href="#">IOS</a></li>
-    			<li><a href="#">Java</a></li>
-    			<li><a href="#">杂谈</a></li>
+            	{% for cat in site.categories %}
+    				<li><a href="{{ site.baseurl }}/categories/{{ cat[0] }}">{{ cat[0] }} ({{ cat | last | size}})</a></li>
+                {% endfor %} 
 			</ul>
 
 			<h4>事件</h4>
