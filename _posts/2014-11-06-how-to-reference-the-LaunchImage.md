@@ -2,7 +2,7 @@
 comments: true
 date: 2014-11-06 16:42:25
 layout: post
-title: how to reference the LaunchImage
+title: How to reference the LaunchImage
 categories:
 - IOS
 ---
@@ -22,9 +22,9 @@ categories:
     LaunchImage@2x.png  
     LaunchImage-800-667h@2x.png (iPhone 6)  
     LaunchImage-800-Portrait-736h@3x.png (iPhone 6 Plus Portrait)  
-在app内，系统会生成如上所示图片，根据需求获取图片：
-```object-c
+在app内，系统会生成如上所示图片，700代表IOS7，800代表IOS8，568h表示4寸屏，667h表示4.7寸屏，736h表示5.5寸屏，根据需求获取图片：
 
+```
     _imageview = [[UIImageView alloc] initWithFrame:self.view.bounds];
     
     GBDeviceDetails *detail = [GBDeviceInfoIOS deviceDetails];
@@ -46,7 +46,6 @@ categories:
             _imageview.image = [UIImage imageNamed:@"LaunchImage"];
             break;
     }
-
 
 ```
 ok，第一篇博文就酱紫啦！！！
