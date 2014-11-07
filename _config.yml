@@ -2,3 +2,4 @@ markdown: rdiscount
 pygments: true
 baseurl: ""
 paginate: 8
+safe: false
