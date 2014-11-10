@@ -5,7 +5,7 @@ body{ margin:0px; padding:0px;}
 
 .page-head--masthead{ background:url(../images/bg.jpg) repeat-x center top #333;}
 
-.person-photo{ background:url(../images/person-photo.png); border-radius:133px;  width:265px; height:265px; margin:0 auto; display:block; }
+.person-photo{ background:url(../images/person-photo1.png); border-radius:133px;  width:265px; height:265px; margin:0 auto; display:block; }
 
 .person-nickname { margin:0 auto; display:block; width:256px; height:80px; line-height:80px; text-align:center;}
 
