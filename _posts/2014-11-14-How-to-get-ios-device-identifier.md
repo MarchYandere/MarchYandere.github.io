@@ -39,7 +39,9 @@ keychain是苹果提供给用户保存私密数据的地方，比如密码，证
  
 
 **代码：**
+
 首先，导入Security.framework，添加两个常量。
+
 ```
 static const char kKeychainUDIDItemIdentifier[]  = "UUID";
 static const char kKeyChainUDIDAccessGroup[] = "AppIdentifier.com.xtownmobile.ccleReading";
@@ -53,7 +55,7 @@ static const char kKeyChainUDIDAccessGroup[] = "AppIdentifier.com.xtownmobile.cc
 
 	[searchDictionary setObject:(id)kSecClassGenericPassword forKey:(id)kSecClass];
 
-	NSData *encodedIdentifier = [NSData dataWithBytes:identifier                                  length:strlen(identifier)];
+	NSData *encodedIdentifier = [NSData dataWithBytes:identifier length:strlen(identifier)];
 	[searchDictionary setObject:encodedIdentifier forKey:(id)kSecAttrGeneric];
 	NSString *accessGroup = [NSString stringWithUTF8String:kKeyChainUDIDAccessGroup];
 	
