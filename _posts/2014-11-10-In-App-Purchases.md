@@ -8,6 +8,56 @@ categories:
 ---
 
 
+###12月15号更新：###
+> 如果购买类型是Non-Consumable，则必须提供Restore按钮来恢复购买。否则会被苹果拒绝。
+
+
+```
+[[SKPaymentQueue defaultQueue] restoreCompletedTransactions];
+```
+
+实现代理：
+
+
+```
+- (void)paymentQueueRestoreCompletedTransactionsFinished:(SKPaymentQueue *)queue
+{
+    
+    for (SKPaymentTransaction *transaction in queue.transactions) {
+	     //do something 
+    }
+    
+}
+
+
+
+- (void)paymentQueue:(SKPaymentQueue *)queue restoreCompletedTransactionsFailedWithError:(NSError *)error
+{
+    // do something
+}
+```
+
+> **Other tips**
+> 当弹出apple id密码输入框后，用户选择cancel，苹果会弹出警告框：无法连接iTunes store。这个用户体验会不好，可以自己做下处理。当用户选择取消，会执行代理的failed方法：
+
+
+```
+- (void)paymentQueue:(SKPaymentQueue *)queue restoreCompletedTransactionsFailedWithError:(NSError *)error
+{
+    if (_delegate && [_delegate respondsToSelector:@selector(failedPurchases:)]) {
+        
+        if (error.code == SKErrorPaymentCancelled || error.code == SKErrorUnknown) {
+            // do nothing 
+        } else {
+            [_delegate failedPurchases:error]; //代理弹出警告框
+        }
+        
+    }
+}
+```
+
+
+
  >前些日子，项目用到了程序内置购买，现在正好有点空闲时间，决定把它记录下来，废话少说，直接开干：
 
 配置篇
